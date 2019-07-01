@@ -15,7 +15,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'Yggdroot/indentLine'
 Plug 'Valloric/YouCompleteMe'
 
 Plug 'hashivim/vim-terraform'
@@ -41,10 +40,6 @@ let NERDTreeDirArrows = 1
 " remaps
 map <leader>f :NERDTreeToggle<CR>
 map <silent> <leader>v :NERDTreeFind<CR>
-
-" ===== indentLine =====
-let g:indentLine_enabled = 1
-let g:indentLine_char = '¦'
 
 " ===== YouCompleteMe =====
 let g:ycm_use_clangd = 0
