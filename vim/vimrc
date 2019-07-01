@@ -1,11 +1,11 @@
+" ===== Leader Shortcuts =====
+let mapleader=","
+
 " include plugins
 so ~/.dotfiles/vim/plugins.vim
 
 " Set to auto read when a file is changed from the outside
 set autoread
-
-" ===== Leader Shortcuts =====
-let mapleader=","
 
 nnoremap <leader>ev :split $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
@@ -17,18 +17,23 @@ set background=dark
 colorscheme gruvbox
 
 set laststatus=2
-set noshowmode	" hide original statusline for lightline
+set noshowmode  " hide original statusline for lightline
 
 if (has("nvim"))
-  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+" set font for macvim
+if has('gui_macvim')
+    set guifont=Monaco:h12
 endif
 
 "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
 "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
 " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
 if (has("termguicolors"))
-  set termguicolors
+    set termguicolors
 endif
 
 " ===== Spaces & Tab =====
@@ -40,7 +45,6 @@ set tabstop=8
 set softtabstop=0
 set expandtab
 set shiftwidth=4
-set smarttab
 
 set linebreak   " only wrap at certain characters
 
@@ -48,7 +52,17 @@ set autoindent
 set smartindent
 set wrap
 
-autocmd FileType make setlocal noexpandtab
+" language-specific styles
+autocmd FileType c,cpp setlocal shiftwidth=4
+autocmd FileType go setlocal shiftwidth=8 noexpandtab
+autocmd FileType html setlocal shiftwidth=2
+autocmd FileType java setlocal shiftwidth=4
+autocmd FileType javascript setlocal shiftwidth=2
+autocmd FileType json setlocal shiftwidth=2
+autocmd FileType make setlocal shiftwidth=8 noexpandtab
+autocmd FileType python setlocal shiftwidth=4
+autocmd FileType sh,zsh setlocal shiftwidth=2
+autocmd FileType yaml setlocal shiftwidth=2
 
 " My settings when editing *.txt files
 "   - automatically indent lines according to previous lines
@@ -56,7 +70,7 @@ autocmd FileType make setlocal noexpandtab
 "   - when I hit tab key, move 2 spaces instead of 8
 "   - wrap text if I go longer than 76 columns
 "   - check spelling
-autocmd FileType text setlocal expandtab shiftwidth=2 textwidth=76 spell spelllang=en_us
+autocmd FileType text setlocal shiftwidth=2 textwidth=76 spell spelllang=en_us
 
 " Don't do spell-checking on Vim help files
 autocmd FileType help setlocal nospell
@@ -136,8 +150,8 @@ map <leader>vs :vsplit<cr>
 
 " Specify the behavior when switching between buffers
 try
-  set switchbuf=useopen,usetab,newtab
-  set stal=2
+    set switchbuf=useopen,usetab,newtab
+    set stal=2
 catch
 endtry
 
@@ -160,10 +174,10 @@ vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 if has("mac") || has("macunix")
-  nmap <D-j> <M-j>
-  nmap <D-k> <M-k>
-  vmap <D-j> <M-j>
-  vmap <D-k> <M-k>
+    nmap <D-j> <M-j>
+    nmap <D-k> <M-k>
+    vmap <D-j> <M-j>
+    vmap <D-k> <M-k>
 endif
 
 " Delete trailing white space on save, useful for some filetypes ;)
@@ -199,11 +213,11 @@ endfunction
 
 " Toggle relative number
 function! NumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber
-  else
-    set relativenumber
-  endif
+    if(&relativenumber == 1)
+        set norelativenumber
+    else
+        set relativenumber
+    endif
 endfunc
 
 " ===== Enable project-specific .vimrc =====
