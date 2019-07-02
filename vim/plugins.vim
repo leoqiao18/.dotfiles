@@ -17,6 +17,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'fatih/vim-go'
 
 Plug 'hashivim/vim-terraform'
 call plug#end()
