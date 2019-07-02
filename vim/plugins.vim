@@ -16,6 +16,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe'
+Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'hashivim/vim-terraform'
 call plug#end()
@@ -44,3 +45,7 @@ map <silent> <leader>v :NERDTreeFind<CR>
 " ===== YouCompleteMe =====
 let g:ycm_use_clangd = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+" ===== vim-tmux-navigator =====
+" Write all buffers before navigating from Vim to tmux pane
+let g:tmux_navigator_save_on_switch = 2
