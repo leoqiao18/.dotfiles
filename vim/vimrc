@@ -124,6 +124,8 @@ set foldnestmax=10    " 10 nestest fold max
 set foldmethod=indent    " foldbased on indent level
 
 " ===== Movement, tabs, windows and buffers =====
+" Enable mouse
+set mouse=a
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 
