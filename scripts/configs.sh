@@ -7,6 +7,7 @@ main() {
 
     vim_config
     tmux_config
+    git_config
   fi
 }
 
