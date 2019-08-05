@@ -15,7 +15,7 @@ vim_config() {
     echo " ** '~/.vimrc' already exists"
   else
     echo " ** setup '~/.vimrc'"
-    cp ./templates/vimrc ~/.vimrc
+    cp ../vim/vimrc.template ~/.vimrc
   fi
 }
 
@@ -24,7 +24,16 @@ tmux_config() {
     echo " ** '~/.tmux.conf' already exists"
   else
     echo " ** setup '~/.tmux.conf'"
-    cp ./templates/tmux.conf ~/.tmux.conf
+    cp ../tmux/tmux.conf.template ~/.tmux.conf
+  fi
+}
+
+git_config() {
+  if [[ -f "$HOME/.gitconfig" ]]; then
+    echo " ** '~/.gitconfig' already exists"
+  else
+    echo " ** setup '~/.gitconfig'"
+    cp ../git/gitconfig.template ~/.gitconfig
   fi
 }
 
