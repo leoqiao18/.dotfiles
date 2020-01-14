@@ -8,6 +8,7 @@ main() {
     vim_config
     tmux_config
     git_config
+    git_ignore
   fi
 }
 
@@ -35,6 +36,15 @@ git_config() {
   else
     echo " ** setup '~/.gitconfig'"
     cp ../git/gitconfig.template ~/.gitconfig
+  fi
+}
+
+git_ignore() {
+  if [[ -f "$HOME/.gitignore" ]]; then
+    echo " ** '~/.gitignore' already exists"
+  else
+    echo " ** setup '~/.gitignore'"
+    cp ../git/gitignore.template ~/.gitignore
   fi
 }
 
