@@ -15,13 +15,13 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript'
 Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+ \ 'do': 'yarn install',
+ \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
 Plug 'hashivim/vim-terraform'
 call plug#end()
@@ -48,9 +48,9 @@ map <leader>f :NERDTreeToggle<CR>
 map <silent> <leader>v :NERDTreeFind<CR>
 
 " ===== YouCompleteMe =====
-let g:ycm_use_clangd = 0
-let g:ycm_autoclose_preview_window_after_completion = 1
-imap <C-j> <C-Space>
+" let g:ycm_use_clangd = 0
+" let g:ycm_autoclose_preview_window_after_completion = 1
+" imap <C-j> <C-Space>
 
 " ===== vim-tmux-navigator =====
 " Write all buffers before navigating from Vim to tmux pane
