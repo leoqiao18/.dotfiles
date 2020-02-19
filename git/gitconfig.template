@@ -1,7 +1,7 @@
 [user]
 	name = Leo Qiao
 	email = qiaofeitong@hotmail.com
-        username = LeoQiao18
+  username = LeoQiao18
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
