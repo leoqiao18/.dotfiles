@@ -34,4 +34,5 @@ fi
 
 alias ls='ls --color'
 alias ll='ls -alF'
+alias l='ls -alF'
 
