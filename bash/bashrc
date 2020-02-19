@@ -32,7 +32,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+alias ls='ls --color'
 alias ll='ls -alF'
 
-# shortcuts to config files
-alias loadbash='source ~/.bashrc'
