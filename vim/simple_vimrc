@@ -1,10 +1,18 @@
 syntax on
+
+set background=dark
+highlight Comment ctermfg=green
+highlight Pmenu ctermbg=gray ctermfg=black
+highlight PmenuSel ctermbg=darkgray ctermfg=black
+set number
+set ruler
+
 set tabstop=2
 set shiftwidth=2
 set expandtab
 set ai
-set number
+
 set hlsearch
-set ruler
-highlight Comment ctermfg=green
-set background=dark
+set path+=**
+set wildmenu
+
