@@ -1,19 +1,111 @@
+""""""""""""""""""""""""""""""
+" => General
+""""""""""""""""""""""""""""""
 syntax on
+set encoding=utf8
 
+" search
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" menu
+set path+=**
+set wildmenu
+set wildignore=*.o,*~,*.pyc
+
+" sane backspace
+set backspace=indent,eol,start
+
+" no backup
+set nobackup
+set nowb
+set noswapfile
+
+
+""""""""""""""""""""""""""""""
+" => UI
+""""""""""""""""""""""""""""""
+set number
+set scrolloff=7
+set showmatch
+
+" status line
+set ruler
+" always show status line
+set laststatus=2
+" Format the status line
+" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ %=Line:\ %l\ \ Column:\ %c
+set statusline=
+set statusline+=%1*
+set statusline+=\ %n\ 
+set statusline+=%*
+
+set statusline+=%2*
+set statusline+=\ %f " relative filepath
+set statusline+=%m " modified?
+set statusline+=%r " read-only?
+set statusline+=\ 
+set statusline+=%*
+
+
+set statusline+=%3*
+set statusline+=%= " left-right separation
+set statusline+=\ 
+set statusline+=%< " truncate point
+set statusline+=\ %{getcwd()}%h
+set statusline+=\ 
+set statusline+=%*
+
+set statusline+=%2*
+set statusline+=\ %y " filetype
+set statusline+=\ %l:%c " line:column
+set statusline+=\ \|\ %LL " total lines
+set statusline+=\ \|\ %p%% " percentage
+set statusline+=\ 
+set statusline+=%*
+
+highlight User1 ctermfg=white ctermbg=black
+highlight User2 ctermfg=white ctermbg=darkgray
+highlight User3 ctermfg=gray ctermbg=black
+
+" bell
+set noerrorbells
+set novisualbell
+set t_vb=
+
+
+""""""""""""""""""""""""""""""
+" => Colors
+""""""""""""""""""""""""""""""
 set background=dark
 highlight Comment ctermfg=green
-highlight Pmenu ctermbg=gray ctermfg=black
-highlight PmenuSel ctermbg=darkgray ctermfg=black
-set number
-set ruler
+"highlight Pmenu ctermbg=gray ctermfg=black
+"highlight PmenuSel ctermbg=darkgray ctermfg=black
 
+
+""""""""""""""""""""""""""""""
+" => Indentation
+""""""""""""""""""""""""""""""
 set tabstop=2
+set softtabstop=2
 set shiftwidth=2
 set expandtab
 set ai
 
-set hlsearch
-set path+=**
-set wildmenu
 
-set backspace=indent,eol,start
+""""""""""""""""""""""""""""""
+" => Indentation
+""""""""""""""""""""""""""""""
+" Return to last edit position when opening files
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" autoread
+set autoread
+au FocusGained,BufEnter * checktime
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Helper functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
