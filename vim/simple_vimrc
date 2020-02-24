@@ -28,18 +28,18 @@ set noswapfile
 " => UI
 """"""""""""""""""""""""""""""
 set number
-set scrolloff=7
+" set scrolloff=7
 set showmatch
 
 " status line
-set ruler
+
+" set ruler
 " always show status line
 set laststatus=2
 " Format the status line
-" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ %=Line:\ %l\ \ Column:\ %c
 set statusline=
 set statusline+=%1*
-set statusline+=\ %n\ 
+set statusline+=\ %n\  " buffer number
 set statusline+=%*
 
 set statusline+=%2*
