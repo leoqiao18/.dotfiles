@@ -41,10 +41,10 @@ set relativenumber
 set showmatch
 
 " list chars
-set list
-if &listchars ==# 'eol:$'
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-endif
+" set list
+" if &listchars ==# 'eol:$'
+"   set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+" endif
 
 " bell
 set noerrorbells
