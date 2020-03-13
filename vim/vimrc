@@ -22,7 +22,7 @@ set wildmenu
 set wildignore=*.o,*~,*.pyc
 
 " backspace
-set backspace=
+set backspace=start,indent,eol
 
 " no backup
 set nobackup
