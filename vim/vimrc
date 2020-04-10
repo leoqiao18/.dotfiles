@@ -71,6 +71,18 @@ set autoindent
 set smartindent
 set wrap
 
+autocmd FileType make setlocal autoindent noexpandtab ts=8 sts=8 sw=8
+autocmd FileType text setlocal autoindent expandtab ts=2 sts=2 sw=2 textwidth=76 spell spelllang=en_us
+autocmd FileType javascript setlocal autoindent expandtab ts=2 sts=2 sw=2
+autocmd FileType html setlocal autoindent expandtab ts=2 sts=2 sw=2
+
+""""""""""""""""""""""""""""""
+" => Movement
+""""""""""""""""""""""""""""""
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
