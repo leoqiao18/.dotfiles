@@ -10,6 +10,7 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'bling/vim-bufferline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dense-analysis/ale'
+Plug 'neovimhaskell/haskell-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
