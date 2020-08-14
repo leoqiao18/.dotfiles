@@ -73,6 +73,7 @@ set wrap
 
 autocmd FileType haskell setlocal autoindent expandtab ts=2 sts=2 sw=2
 autocmd FileType html setlocal autoindent expandtab ts=2 sts=2 sw=2
+autocmd FileType yaml setlocal autoindent expandtab ts=2 sts=2 sw=2
 autocmd FileType javascript setlocal autoindent expandtab ts=2 sts=2 sw=2
 autocmd FileType make setlocal autoindent noexpandtab ts=8 sts=8 sw=8
 autocmd FileType text setlocal autoindent expandtab ts=2 sts=2 sw=2 textwidth=76 spell spelllang=en_us
