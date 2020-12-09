@@ -9,8 +9,6 @@ call plug#begin()
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'bling/vim-bufferline'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'dense-analysis/ale'
-Plug 'neovimhaskell/haskell-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -37,14 +35,3 @@ let g:hardtime_default_on = 1
 " Airline
 " ====================
 set noshowmode
-
-" ====================
-" ALE
-" ====================
-let g:airline#extensions#ale#enabled = 1
-
-" ====================
-" ghcmod-vim
-" ====================
-nnoremap <Leader>ht :GhcModType<cr>
-nnoremap <Leader>htc :GhcModTypeClear<cr>
