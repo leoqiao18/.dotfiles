@@ -1,9 +1,11 @@
 """"""""""""""""""""""""""""""
 " => General
 """"""""""""""""""""""""""""""
+set nocompatible
+
 " filetype
-filetype plugin on
-filetype indent on
+filetype off
+filetype plugin indent on
 
 let mapleader=","
 
