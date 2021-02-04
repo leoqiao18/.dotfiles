@@ -49,13 +49,20 @@ set showmatch
 " list chars
 " set list
 " if &listchars ==# 'eol:$'
-"   set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+"   set listchars=tab:>\ ,trail:-,eet ctends:>,precedes:<,nbsp:+
 " endif
 
 " bell
 set noerrorbells
 set novisualbell
 set t_vb=
+
+" cursor
+set cursorline
+set cursorcolumn
+" dark grey
+highlight cursorline cterm=NONE ctermbg=8 ctermfg=NONE
+highlight cursorcolumn cterm=NONE ctermbg=8 ctermfg=NONE
 
 
 """"""""""""""""""""""""""""""
