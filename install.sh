@@ -79,7 +79,8 @@ CopyFile "${DOTFILES_DIR}/vim/vimrc.template" "$HOME/.vimrc"
 
 # Tool: tmux
 Install tmux
-CopyFile "${DOTFILES_DIR}/tmux/tmux.conf.template" "$HOME/.tmux.conf.template"
+CopyFile "${DOTFILES_DIR}/tmux/tmux.conf.template" "$HOME/.tmux.conf"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Language: C, C++
 Install gcc

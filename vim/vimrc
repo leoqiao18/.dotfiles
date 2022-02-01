@@ -4,12 +4,11 @@
 set nocompatible
 
 " filetype
-filetype off
 filetype plugin indent on
 
 let mapleader=","
 
-syntax enable
+syntax on
 set encoding=utf8
 
 " search
@@ -42,7 +41,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " => UI
 """"""""""""""""""""""""""""""
 set number
-set relativenumber
+" set relativenumber
 " set scrolloff=7
 set showmatch
 
@@ -59,10 +58,13 @@ set t_vb=
 
 " cursor
 set cursorline
-set cursorcolumn
+" set cursorcolumn
 " dark grey
-highlight cursorline cterm=NONE ctermbg=8 ctermfg=NONE
-highlight cursorcolumn cterm=NONE ctermbg=8 ctermfg=NONE
+" highlight cursorline cterm=NONE ctermbg=8 ctermfg=NONE
+" highlight cursorcolumn cterm=NONE ctermbg=8 ctermfg=NONE
+
+colorscheme murphy
+set background=dark
 
 
 """"""""""""""""""""""""""""""
