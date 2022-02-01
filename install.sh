@@ -91,8 +91,10 @@ eval $(opam env)
 
 # Language: Haskell
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+source /home/ubuntu/.ghcup/env
 stack setup
 cabal update
 
 # Language: Python 3
-sudo apt install python3 python3-pip
+Install python3
+Install python3-pip
