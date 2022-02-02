@@ -31,11 +31,11 @@ Usage() {
 while getopts 'b:h' opt; do
   case $opt in
     b)
-	KEEP_BACKUP=true
+        KEEP_BACKUP=true
         ;;
     h | *)
-	Usage
-	;;
+        Usage
+        ;;
   esac
 done
 
@@ -61,17 +61,21 @@ Install wget
 Install grep
 Install make
 Install cmake
+Install llvm
 Install build-essential
-
-# oh-my-bash
-if [ ! -d "$HOME/.oh-my-bash" ]; then
-  bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
-fi
+Install gcc
+Install python3
+Install python3-pip
 
 # Tool: Git
 Install git
 CopyFile "${DOTFILES_DIR}/git/gitconfig.template" "$HOME/.gitconfig"
 CopyFile "${DOTFILES_DIR}/git/gitignore.template" "$HOME/.gitignore"
+
+# oh-my-bash
+if [ ! -d "$HOME/.oh-my-bash" ]; then
+  bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+fi
 
 # Editor: Vim
 Install vim
@@ -81,9 +85,6 @@ CopyFile "${DOTFILES_DIR}/vim/vimrc.template" "$HOME/.vimrc"
 Install tmux
 CopyFile "${DOTFILES_DIR}/tmux/tmux.conf.template" "$HOME/.tmux.conf"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-# Language: C, C++
-Install gcc
 
 # Language: Ocaml
 Install opam
@@ -95,7 +96,3 @@ curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 source /home/ubuntu/.ghcup/env
 stack setup
 cabal update
-
-# Language: Python 3
-Install python3
-Install python3-pip

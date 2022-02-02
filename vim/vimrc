@@ -1,102 +1,36 @@
-""""""""""""""""""""""""""""""
-" => General
-""""""""""""""""""""""""""""""
 set nocompatible
 
-" filetype
-filetype plugin indent on
+" automatically install vimplug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
 
-let mapleader=","
+call plug#begin('~/.vim/plugged')
 
-syntax on
-set encoding=utf8
+" automatically install missing plugins on startup
+if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
+  autocmd VimEnter * PlugInstall | q
+endif
 
-" search
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
+" my plugins
+let g:plug_timeout = 300 " increase timeout for YouCompleteMe
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'morhetz/gruvbox'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-fugitive'
 
-" menu
-set path+=**
-set wildmenu
-set wildignore=*.o,*~,*.pyc
-
-" backspace
-set backspace=start,indent,eol
-
-" no backup
-set nobackup
-set nowb
-set noswapfile
-
-" autoread
-set autoread
-
-" Return to last edit position when opening files
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+call plug#end()
 
 
-""""""""""""""""""""""""""""""
-" => UI
-""""""""""""""""""""""""""""""
-set number
-" set relativenumber
-" set scrolloff=7
-set showmatch
-
-" list chars
-" set list
-" if &listchars ==# 'eol:$'
-"   set listchars=tab:>\ ,trail:-,eet ctends:>,precedes:<,nbsp:+
-" endif
-
-" bell
-set noerrorbells
-set novisualbell
-set t_vb=
-
-" cursor
-set cursorline
-" set cursorcolumn
-" dark grey
-" highlight cursorline cterm=NONE ctermbg=8 ctermfg=NONE
-" highlight cursorcolumn cterm=NONE ctermbg=8 ctermfg=NONE
-
-colorscheme murphy
 set background=dark
+syntax enable
+colorscheme gruvbox
 
-
-""""""""""""""""""""""""""""""
-" => Colors
-""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""
-" => Indentation
-""""""""""""""""""""""""""""""
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set autoindent
-set smartindent
-set wrap
-
-autocmd FileType haskell setlocal autoindent expandtab ts=2 sts=2 sw=2
-autocmd FileType html setlocal autoindent expandtab ts=2 sts=2 sw=2
-autocmd FileType yaml setlocal autoindent expandtab ts=2 sts=2 sw=2
-autocmd FileType javascript setlocal autoindent expandtab ts=2 sts=2 sw=2
-autocmd FileType make setlocal autoindent noexpandtab ts=8 sts=8 sw=8
-autocmd FileType text setlocal autoindent expandtab ts=2 sts=2 sw=2 textwidth=76 spell spelllang=en_us
-
-""""""""""""""""""""""""""""""
-" => Movement
-""""""""""""""""""""""""""""""
-" move vertically by visual line
-nnoremap j gj
-nnoremap k gk
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Helper functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader = "\<space>"
