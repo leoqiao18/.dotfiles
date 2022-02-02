@@ -5,3 +5,8 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false

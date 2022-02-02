@@ -24,7 +24,7 @@ Usage() {
   echo "-h	Display usage."
   echo
 
-  exit 0;
+  exit 0
 }
 
 # parse options
@@ -76,6 +76,13 @@ CopyFile "${DOTFILES_DIR}/git/gitignore.template" "$HOME/.gitignore"
 if [ ! -d "$HOME/.oh-my-bash" ]; then
   bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 fi
+
+# javascript
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm install node
 
 # Editor: Vim
 Install vim
